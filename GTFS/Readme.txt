@@ -1,0 +1,1 @@
+En este directorio se encuentran todos los archivos necesarios para visualizar los mapas mostrados en el trabajo de investigación. Si QGIS no encuentra alguno de los archivos, revisar la ruta de origen. 
