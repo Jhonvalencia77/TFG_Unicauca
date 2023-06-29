@@ -6,7 +6,7 @@ import ray
 class TripsLoader:
     BASEPATH = "data/"
     ORIGIN_FILENAME = "timeseries_o.csv"
-    DEST_FILENAME = "timeseries_d.csv"
+    # DEST_FILENAME = "timeseries_d.csv"
     TRAYEC_FILENAME = BASEPATH + "Trayectos_Periodo_Confinamiento2.csv"
 
     def __init__(self, verbose=True):
@@ -19,10 +19,10 @@ class TripsLoader:
         self.timeseries_o = self.timeseries_o.astype(np.float32)
 
         #Llamamos como propiedad del objeto al dataframe timeseries_d.csv
-        self.timeseries_d = pd.read_csv(self.BASEPATH + self.DEST_FILENAME)
-        self.timeseries_d["ds"] = pd.to_datetime(self.timeseries_d["ds"])
-        self.timeseries_d = self.timeseries_d.set_index("ds")
-        self.timeseries_d = self.timeseries_d.astype(np.float32)
+        # self.timeseries_d = pd.read_csv(self.BASEPATH + self.DEST_FILENAME)
+        # self.timeseries_d["ds"] = pd.to_datetime(self.timeseries_d["ds"])
+        # self.timeseries_d = self.timeseries_d.set_index("ds")
+        # self.timeseries_d = self.timeseries_d.astype(np.float32)
 
         #Llamamos como propiedad del objeto al dataframe Trayectos_Periodo_Confinamiento2
         self.trayectos = TripsLoader.load_trayectos.remote(TripsLoader.TRAYEC_FILENAME)
